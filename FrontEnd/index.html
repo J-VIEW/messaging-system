@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="User-Interface/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="description" content="My Chat - A simple and secure messaging application">
+    <link rel="stylesheet" href="./chat.css">
+    <script type="text/javascript" src="./index.js" defer></script>
+    <script type="text/javascript" src="./settings.js" defer></script>
+    <script src="./chat.js" defer></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="left_panel">
+        <div id="user_info">
+          <img id="profile_picture" alt="Profile Picture" src="">
+          <br />
+          <span id="user_name">username</span>
+          <br />
+          <span id="useremail">email@gmail.com</span>
+          <br />
+          <br />
+          <br />
+          <div>
+            <label id="label_chat" for="radio_chat"
+              >Chat <img src="User-Interface/icons/message.png"
+            /></label>
+            <label id="label_contacts" for="radio_contacts"
+              >Contact <img src="User-Interface/icons/contacts.png"
+            /></label>
+            <label id="label_settings" for="radio_settings"
+              >Settings <img src="User-Interface/icons/settings.png"
+            /></label>
+            <label id="label_logout" for="radio_logout"
+              >LOGOUT <img src="User-Interface/icons/logout.png"
+            /></label>
+          </div>
+        </div>
+      </div>
+      <div id="right_panel">
+        <div id="header">
+          <!-- <div class=""><img src="User-Interface/icons/loading.gif" /></div> -->
+          My Chat
+        </div>
+        <div id="container">
+          <div id="inner_left_panel"></div>
+          <input
+            type="radio"
+            id="radio_chat"
+            name="button_radio"
+            placeholder=""
+          />
+          <input
+            type="radio"
+            id="radio_contacts"
+            name="button_radio"
+            placeholder=""
+          />
+          <input
+            type="radio"
+            id="radio_settings"
+            name="button_radio"
+            placeholder=""
+          />
+          <input
+            type="radio"
+            id="radio_logout"
+            name="button_radio"
+            placeholder=""
+          />
+
+          <!-- Add the new multi-select message area here -->
+          <div id="multiSelectMessageArea" style="display: none;">
+            <div class="multi-select-input-area">
+              <input type="text" id="multiSelectMessageInput" placeholder="Type your message...">
+              <!-- <button id="multiSelectFileButton">📎</button>
+              <button id="multiSelectSendButton">Send to Selected</button> -->
+            </div>
+          </div>
+          <div id="inner_right_panel"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <h2>Confirm Logout</h2>
+        <p>Are you sure you want to log out?</p>
+        <div class="modal-buttons">
+          <button id="confirmLogout">Yes, Logout</button>
+          <button id="cancelLogout">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loadingModal" class="modal">
+      <div class="modal-content loading-content">
+        <img src="User-Interface/icons/loading.gif" alt="Loading..." />
+      </div>
+    </div>
+
+    <div id="settings_container" style="display: none;">
+      <div id="settings_wrapper">
+        <h2>User Settings</h2>
+        <form id="settings_form">
+          <div class="form_row">
+            <div class="form_column">
+              <input type="text" id="username" name="username" placeholder="Username">
+              <input type="email" id="email" name="email" placeholder="Email">
+
+              <input type="password" id="current_password" name="current_password" placeholder="Current Password">
+              <input type="password" id="new_password" name="new_password" placeholder="New Password">
+              <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm New Password">
+    
+              <div id="gender_div">
+                
+<label class="gender-option">
+  <input type="radio" name="gender" value="male"> Male
+</label>
+<label class="gender-option">
+  <input type="radio" name="gender" value="female"> Female
+</label>
+
+              </div>
+              
+            </div>
+            <div class="form_column" id="profile_pic_div">
+              <img id="current_profile_pic" src="" alt="Current Profile Picture">
+              <label for="profile_pic_input" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i> Add Image
+              </label>
+              <input type="file" id="profile_pic_input" name="profile_pic" accept="image/*" style="display:none;">
+              <button id="remove_profile_pic">Remove Profile Picture</button>
+              <input type="hidden" id="remove_profile_pic_flag" name="remove_profile_pic" value="0">
+            </div>
+          </div>
+          <button type="submit" id="save_changes_button">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    </div>
+
+
+    <div id="quoteInterestModal" class="modal">
+      <div class="modal-content">
+        <h2>Set Interests and Quote</h2>
+        <form id="quoteInterestForm">
+          <label for="interests">Interests (Max 4):</label>
+          <select id="interests" name="interests" multiple required>
+            <option value="Education and Learning">Education and Learning</option>
+            <option value="Politics">Politics</option>
+            <option value="Art">Art</option>
+            <option value="Travel and Adventure">Travel and Adventure</option>
+            <option value="Passions">Passions</option>
+          </select>
+          <label for="quote">Quote:</label>
+          <input type="text" id="quote" name="quote" required>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    
+  </body>
+</html>

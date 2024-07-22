@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - My Chat</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h1>My Chat</h1>
+        <div id="login_div">SIGNUP</div>
+      </div>
+
+      <div id="error_msg"></div>
+
+      <form id="myform">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          name="confirm_password"
+          placeholder="Confirm Password"
+          required
+        />
+
+        <!-- New fields for SMTP -->
+        <input
+          type="email"
+          name="smtp_email"
+          placeholder="Your Gmail address for sending verification"
+          required
+        />
+        <input
+          type="password"
+          name="smtp_password"
+          placeholder="Your Gmail App Password"
+          required
+        />
+
+        <div id="gender_div">
+          <p>Gender:</p>
+          <div class="gender-option">
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+          </div>
+          <div class="gender-option">
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+          </div>
+          <div class="gender-option">
+            <input type="radio" id="custom" name="gender" value="custom" />
+            <label for="custom">Custom</label>
+          </div>
+        </div>
+
+        <input type="submit" id="signup_button" value="Sign Up" />
+      </form>
+
+      <p>
+        Already have an account? <a href="./login.html">Click here to log in</a>
+      </p>
+    </div>
+    <script src="signup.js"></script>
+  </body>
+</html>
